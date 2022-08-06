@@ -8,7 +8,7 @@
 
 
 
-    :root {
+:root {
     --primary-text-color: #212121;
     --second-text-color: #757575;
     --background-color: #FFFFFF;
@@ -25,6 +25,9 @@
     --main-font-size: 14px;
     --footer-color: #2f303a;
     --footer-mail-tel-color: rgba(255, 255, 255, 0.6);
+    --portfolio-project-color: #eeeeee;
+    --outline: tomato;
+
 }
 
 body { 
@@ -33,6 +36,7 @@ body {
     background-color: var(--background-color);
     letter-spacing: var(--letter-spacing);
     font-size: var(--main-font-size);
+    width: 1400px;
 }
 
 h1,
@@ -51,17 +55,21 @@ ul {
 }
 
 button {
-    cursor: pointer;
     display: block;
     margin: 0 auto;
+    cursor: pointer;
     border: none;
     border-radius: 4px;
+}
+
+address {
+    font-style: normal;
 }
 
 img {
 	display: block;
 	max-width: 100%;
-	height: auto;
+	/* height: auto; */
 }
 
 ul {
@@ -134,7 +142,7 @@ ul {
     margin-left: 215px;
 }
 
-/* header-nav  треба допомога*/
+/* header-nav */
 
 .header {
     margin-top: 0;
@@ -182,6 +190,7 @@ ul {
 
 .header-contacts {
 margin-left: auto;
+margin-right: auto;
 }
 
 .header-contact {
@@ -207,6 +216,11 @@ margin-left: auto;
     color: var(--accent-color);
 }
 
+.nav-list-item:not(:last-child),
+.contacts-item:not(:last-child) {
+margin-right: 50px;
+}
+
 /* Hero */
 
 .hero {
@@ -214,7 +228,7 @@ margin-left: auto;
     padding-top: 200px;
     padding-bottom: 200px;
     margin-bottom: 164px;
-    outline: 2px solid tomato;
+    outline: 2px solid var(--outline);
 }
 
 .hero-title {
@@ -262,7 +276,7 @@ margin-left: auto;
     margin-left: 215px;
     margin-right: 215px;
     margin-bottom: 94px;
-    outline: 2px solid tomato;
+    outline: 2px solid var(--outline);
 }
 .benefits-list {
     display: flex;
@@ -288,11 +302,10 @@ margin-left: auto;
     color: var(--second-text-color);
 }
 
-
-
 /* gallery */
+
 .gallery {
-    outline: 2px solid tomato;
+    outline: 2px solid var(--outline);
 }
 
 .gallery-title {
@@ -316,8 +329,9 @@ margin-left: auto;
 
 .team {
     background-color: var(--additional-background-color);
-    outline: 2px solid tomato;
+    outline: 2px solid var(--outline);
 }
+
 .team-title {
     font-weight: 700;
     font-size: 36px;
@@ -363,11 +377,13 @@ margin-left: auto;
 .footer {
     background-color: var(--footer-color);
 }
+
 .container-footer {
     margin-left: 215px;
     padding-top: 60px;
 	padding-bottom: 60px;
 }
+
 .footer-link {
     text-decoration: none;
     font-style: normal;
@@ -413,8 +429,9 @@ margin-left: auto;
 
 /* portfolio */
 
-.header-container.container {
+.header-container .conteiner {
 margin-bottom: 94px;
+/* padding-bottom: 94px; */
 }
 
 .portfolio-list {
@@ -424,16 +441,10 @@ margin-bottom: 94px;
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
-    /* margin-left: 512px;
-    margin-right: 513px; */
     }
 
-    /* .buttons-list-item:not(:last-child) {
-        margin-right: 8px;
-    } */
 
-
-.portfolio-btn {
+    .portfolio-btn {
     font-family: inherit;
     color: var(--primary-text-color);
     background-color: var(--additional-background-color);
@@ -442,15 +453,15 @@ margin-bottom: 94px;
     line-height: 1.63;
     cursor: pointer;
     letter-spacing: var(--letter-spacing);
-    border-radius: 4px;
-    border: 0;
     padding: 6px 22px;
+    
 }
 
 .portfolio-btn:hover {
     color: var(--primary-text-color);
     background-color: var(--additional-background-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    
 }
 
 .portfolio-first-btn.list.current {
@@ -463,38 +474,36 @@ margin-bottom: 94px;
 }
 
 .portfolio-project {
-    outline: 2px solid tomato;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    
+
+    outline: 2px solid var(--outline);
 }
 
-/* .portfolio-title {
-align-items: center;
-}
-.portfolio-text {
-    align-items: center;
-} */
+.project-list-item {
+    background-color: var(--background-color);
+    width: calc((100% - 2 * 30px) / 3);
+    display: block;
+
+}   
 
 .portfolio-description {
     padding: 20px 24px;
+    min-width: 322px;
+    border-right: 1px solid var(--portfolio-project-color);
+    border-bottom: 1px solid var(--portfolio-project-color);
+    border-left: 1px solid var(--portfolio-project-color);
 }
 
-.portfolio-list-item {
-    background-color: var(--background-color);
-    width: calc((100% - 2 * 30px) / 3);
-}
-.portfolio-title {
+.project-list-title {
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
 }
-.portfolio-text {
+.project-list-text {
     font-size: 16px;
     line-height: 1.88;
     color: var(--second-text-color);
 }
-
-
